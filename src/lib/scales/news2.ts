@@ -95,7 +95,7 @@ export function calculateNEWS2(input: NEWS2Input): ScaleResult {
     recommendation: total >= 7
       ? "Riesgo alto. Evaluación médica urgente. Considerar traslado a cuidados intensivos."
       : total >= 5
-        ? "Riesgo medio. Aumentar frecuencia de monitoreo. Evaluación médica pronta."
-        : "Continuar monitoreo de rutina.",
+        ? "Riesgo medio. Aumentar frecuencia de monitorización. Evaluación médica pronta."
+        : "Continuar monitorización de rutina.",
   }
 }

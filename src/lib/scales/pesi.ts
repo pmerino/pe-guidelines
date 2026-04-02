@@ -66,6 +66,6 @@ export function calculatePESI(input: PESIInput): ScaleResult {
     }.`,
     recommendation: score <= 85
       ? "Bajo riesgo. Evaluar aptitud para tratamiento ambulatorio con Hestia."
-      : "Riesgo elevado. Considerar hospitalización y monitoreo.",
+      : "Riesgo elevado. Considerar hospitalización y monitorización.",
   }
 }

@@ -32,7 +32,7 @@ export function calculateShockIndex(input: ShockIndexInput): ScaleResult {
     riskLevel,
     interpretation: `Shock Index = FC/PAS = ${input.heartRate}/${input.systolicBP} = ${rounded}. ${label}.`,
     recommendation: si >= 1.0
-      ? "Shock Index elevado. Asociado con mayor riesgo de eventos adversos. Considerar monitoreo hemodinámico."
+      ? "Shock Index elevado. Asociado con mayor riesgo de eventos adversos. Considerar monitorización hemodinámico."
       : "Shock Index dentro de rango aceptable.",
   }
 }

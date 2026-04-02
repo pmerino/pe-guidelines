@@ -43,9 +43,9 @@ export function calculateCPES(input: CPESInput): ScaleResult {
         : "Riesgo menor de shock normotensivo."
     }`,
     recommendation: isHighRisk
-      ? "Alto riesgo de shock normotensivo. Monitoreo hemodinámico estrecho. Considerar terapias avanzadas."
+      ? "Alto riesgo de shock normotensivo. Monitorización hemodinámico estrecho. Considerar terapias avanzadas."
       : score <= 2
-        ? "Bajo riesgo. Monitoreo estándar."
-        : "Riesgo intermedio. Monitoreo cercano recomendado.",
+        ? "Bajo riesgo. Monitorización estándar."
+        : "Riesgo intermedio. Monitorización cercano recomendado.",
   }
 }

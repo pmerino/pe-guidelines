@@ -85,7 +85,7 @@ const TREATMENTS: Record<AHACategory, TreatmentRecommendation> = {
       mt: { cor: "3: No Benefit", loe: "C-EO" },
       surgery: { cor: "3: No Benefit", loe: "C-EO" },
     },
-    monitoring: "Hospitalización. Monitoreo con biomarcadores.",
+    monitoring: "Hospitalización. Monitorización con biomarcadores.",
     pertIndicated: false,
     outpatientEligible: false,
     keyActions: [
@@ -109,14 +109,14 @@ const TREATMENTS: Record<AHACategory, TreatmentRecommendation> = {
       mt: { cor: "2b", loe: "C-LD" },
       surgery: { cor: "3: No Benefit", loe: "C-EO" },
     },
-    monitoring: "Hospitalización. Monitoreo estrecho primeras 24-72h.",
+    monitoring: "Hospitalización. Monitorización estrecho primeras 24-72h.",
     pertIndicated: false,
     outpatientEligible: false,
     keyActions: [
       "Iniciar LMWH",
       "Medir lactato",
       "Evaluar función VD",
-      "Monitoreo estrecho primeras 24-72h",
+      "Monitorización estrecho primeras 24-72h",
       "Usar score de riesgo validado",
     ],
   },
@@ -126,7 +126,7 @@ const TREATMENTS: Record<AHACategory, TreatmentRecommendation> = {
     anticoagulation: {
       type: "LMWH",
       route: "Subcutáneo",
-      notes: "Iniciar LMWH. Monitoreo hemodinámico estrecho.",
+      notes: "Iniciar LMWH. Monitorización hemodinámico estrecho.",
     },
     advancedTherapy: {
       systemicLysis: { cor: "2b", loe: "C-LD" },
@@ -134,7 +134,7 @@ const TREATMENTS: Record<AHACategory, TreatmentRecommendation> = {
       mt: { cor: "2b", loe: "C-LD" },
       surgery: { cor: "3: No Benefit", loe: "C-EO" },
     },
-    monitoring: "Hospitalización. UCI o monitoreo intermedio. Primeras 24-72h críticas.",
+    monitoring: "Hospitalización. UCI o monitorización intermedio. Primeras 24-72h críticas.",
     pertIndicated: true,
     outpatientEligible: false,
     keyActions: [
@@ -142,7 +142,7 @@ const TREATMENTS: Record<AHACategory, TreatmentRecommendation> = {
       "Medir lactato (MAP >80 mmHg sugiere bajo riesgo adicional)",
       "Evaluar función VD con eco/CT",
       "Activar PERT si disponible",
-      "Monitoreo estrecho 24-72h — ventana crítica",
+      "Monitorización estrecho 24-72h — ventana crítica",
       "Si deterioro → considerar terapia avanzada",
     ],
   },
@@ -186,7 +186,7 @@ const TREATMENTS: Record<AHACategory, TreatmentRecommendation> = {
       mt: { cor: "2b", loe: "B-NR" },
       surgery: { cor: "2b", loe: "C-LD" },
     },
-    monitoring: "UCI. Monitoreo hemodinámico continuo. PERT obligatorio.",
+    monitoring: "UCI. Monitorización hemodinámico continuo. PERT obligatorio.",
     pertIndicated: true,
     outpatientEligible: false,
     keyActions: [

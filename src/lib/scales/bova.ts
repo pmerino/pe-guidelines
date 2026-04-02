@@ -42,9 +42,9 @@ export function calculateBova(input: BovaInput): ScaleResult {
     riskLevel,
     interpretation: `Bova Score: ${score} puntos. Stage ${stage} (${label}).`,
     recommendation: stage === "I"
-      ? "Bajo riesgo de complicaciones. Monitoreo estándar."
+      ? "Bajo riesgo de complicaciones. Monitorización estándar."
       : stage === "II"
-        ? "Riesgo intermedio. Monitoreo estrecho y considerar evaluación hemodinámica."
-        : "Alto riesgo. Monitoreo intensivo. Considerar terapias avanzadas si deterioro.",
+        ? "Riesgo intermedio. Monitorización estrecho y considerar evaluación hemodinámica."
+        : "Alto riesgo. Monitorización intensivo. Considerar terapias avanzadas si deterioro.",
   }
 }

@@ -7,8 +7,9 @@ import { Separator } from "@/components/ui/separator"
 import { getTreatment } from "@/lib/treatment"
 import {
   Pill, Syringe, AlertTriangle, Users, Home as HomeIcon,
-  Activity, ShieldAlert, HeartPulse,
+  Activity, ShieldAlert, HeartPulse, BookOpen,
 } from "lucide-react"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 import type { EvaluationState } from "@/lib/types"
 
 interface Props {
@@ -112,7 +113,7 @@ export function StepResult({ state }: Props) {
         <CardHeader className="pb-2 pt-3 px-4">
           <CardTitle className="text-sm font-medium flex items-center gap-2">
             <Activity className="h-4 w-4 text-green-400" />
-            Monitoreo y disposición
+            Monitorización y disposición
           </CardTitle>
         </CardHeader>
         <CardContent className="px-4 pb-3 space-y-2">
@@ -151,6 +152,40 @@ export function StepResult({ state }: Props) {
           </ul>
         </CardContent>
       </Card>
+
+      {/* Glossary */}
+      <Accordion>
+        <AccordionItem>
+          <AccordionTrigger className="text-xs text-muted-foreground gap-2">
+            <BookOpen className="h-3.5 w-3.5 shrink-0" />
+            Glosario de abreviaturas
+          </AccordionTrigger>
+          <AccordionContent>
+            <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs">
+              <dt className="font-mono font-medium text-foreground">COR</dt>
+              <dd className="text-muted-foreground">Class of Recommendation — Clase de recomendación</dd>
+              <dt className="font-mono font-medium text-foreground">LOE</dt>
+              <dd className="text-muted-foreground">Level of Evidence — Nivel de evidencia</dd>
+              <dt className="font-mono font-medium text-foreground">CDL</dt>
+              <dd className="text-muted-foreground">Catheter-Directed Lysis — Trombolisis dirigida por catéter</dd>
+              <dt className="font-mono font-medium text-foreground">MT</dt>
+              <dd className="text-muted-foreground">Mechanical Thrombectomy — Trombectomía mecánica</dd>
+              <dt className="font-mono font-medium text-foreground">PERT</dt>
+              <dd className="text-muted-foreground">Pulmonary Embolism Response Team — Equipo de respuesta a TEP</dd>
+              <dt className="font-mono font-medium text-foreground">LMWH</dt>
+              <dd className="text-muted-foreground">Low Molecular Weight Heparin — Heparina de bajo peso molecular</dd>
+              <dt className="font-mono font-medium text-foreground">UFH</dt>
+              <dd className="text-muted-foreground">Unfractionated Heparin — Heparina no fraccionada</dd>
+              <dt className="font-mono font-medium text-foreground">DOAC</dt>
+              <dd className="text-muted-foreground">Direct Oral Anticoagulant — Anticoagulante oral directo</dd>
+              <dt className="font-mono font-medium text-foreground">VA-ECMO</dt>
+              <dd className="text-muted-foreground">Veno-Arterial Extracorporeal Membrane Oxygenation — Oxigenación por membrana extracorpórea venoarterial</dd>
+              <dt className="font-mono font-medium text-foreground">VD</dt>
+              <dd className="text-muted-foreground">Ventrículo derecho</dd>
+            </dl>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
       <p className="text-[10px] text-muted-foreground text-center">
         Basado en AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN 2026 Guidelines.

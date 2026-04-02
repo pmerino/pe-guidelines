@@ -24,7 +24,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
 const CATEGORY_LABELS = {
   probability: "Probabilidad Clínica",
   severity: "Severidad y Pronóstico",
-  monitoring: "Monitoreo",
+  monitoring: "Monitorización",
 }
 
 const CATEGORY_COLORS = {
