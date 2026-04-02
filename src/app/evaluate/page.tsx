@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
@@ -20,10 +20,37 @@ const STEPS = [
   { id: "result", label: "Resultado", number: 5 },
 ]
 
+const STORAGE_KEY = "pe-eval-state"
+const STEP_KEY = "pe-eval-step"
+
+function loadState(): EvaluationState {
+  if (typeof window === "undefined") return {}
+  try {
+    const saved = sessionStorage.getItem(STORAGE_KEY)
+    return saved ? JSON.parse(saved) : {}
+  } catch { return {} }
+}
+
+function loadStep(): number {
+  if (typeof window === "undefined") return 0
+  try {
+    const saved = sessionStorage.getItem(STEP_KEY)
+    return saved ? parseInt(saved, 10) : 0
+  } catch { return 0 }
+}
+
 export default function EvaluatePage() {
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(loadStep)
   const [direction, setDirection] = useState(1)
-  const [state, setState] = useState<EvaluationState>({})
+  const [state, setState] = useState<EvaluationState>(loadState)
+
+  useEffect(() => {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+  }, [state])
+
+  useEffect(() => {
+    sessionStorage.setItem(STEP_KEY, String(step))
+  }, [step])
 
   const updateState = useCallback((updates: Partial<EvaluationState>) => {
     setState((prev) => ({ ...prev, ...updates }))
@@ -47,6 +74,8 @@ export default function EvaluatePage() {
     setStep(0)
     setDirection(-1)
     setState({})
+    sessionStorage.removeItem(STORAGE_KEY)
+    sessionStorage.removeItem(STEP_KEY)
   }
 
   const canAdvance = (): boolean => {

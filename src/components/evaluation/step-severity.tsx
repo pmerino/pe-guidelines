@@ -72,6 +72,7 @@ export function StepSeverity({ state, onUpdate }: Props) {
           { key: "rvDysfunction" as const, label: "Disfunción del VD (eco/CT: RV/LV >1.0)" },
           { key: "hypotension" as const, label: "Hipotensión (PAS <90 mmHg)" },
           { key: "shock" as const, label: "Shock (lactato >2, AKI, IC ≤2.2)" },
+          { key: "refractoryShockOrArrest" as const, label: "Shock refractario a vasopresores o paro cardíaco" },
           { key: "lactateElevated" as const, label: "Lactato elevado" },
           { key: "needsSupplementalO2" as const, label: "Necesita O₂ suplementario" },
           { key: "tachypnea" as const, label: "Taquipnea (FR ≥30) o SpO₂ <90%" },

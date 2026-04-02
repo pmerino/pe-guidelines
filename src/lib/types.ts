@@ -65,6 +65,7 @@ export interface EvaluationState {
   hypotension?: boolean
   shock?: boolean
   lactateElevated?: boolean
+  refractoryShockOrArrest?: boolean
   needsSupplementalO2?: boolean
   tachypnea?: boolean
   // Step 4-5: Category & treatment

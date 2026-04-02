@@ -27,13 +27,14 @@ export function StepCategory({ state, onUpdate }: Props) {
       normotensiveShock: !!state.shock && !state.hypotension,
       persistentHypotension: !!state.hypotension && !!state.shock,
       cardiogenicShock: !!state.hypotension && !!state.shock,
-      refractoryShockOrArrest: false,
+      refractoryShockOrArrest: !!state.refractoryShockOrArrest,
       needsSupplementalO2: !!state.needsSupplementalO2,
       tachypnea: !!state.tachypnea,
     })
   }, [
     state.severityResult, state.rvDysfunction, state.biomarkerElevated,
-    state.hypotension, state.shock, state.needsSupplementalO2, state.tachypnea,
+    state.hypotension, state.shock, state.refractoryShockOrArrest,
+    state.needsSupplementalO2, state.tachypnea,
   ])
 
   useEffect(() => {
@@ -87,6 +88,7 @@ export function StepCategory({ state, onUpdate }: Props) {
             <div>Biomarcadores: <span className="font-medium">{state.biomarkerElevated ? "Elevados" : "Normales"}</span></div>
             <div>Hipotensión: <span className="font-medium">{state.hypotension ? "Sí" : "No"}</span></div>
             <div>Shock: <span className="font-medium">{state.shock ? "Sí" : "No"}</span></div>
+            <div>Refractario/Paro: <span className="font-medium">{state.refractoryShockOrArrest ? "Sí" : "No"}</span></div>
             <div>O₂ suplementario: <span className="font-medium">{state.needsSupplementalO2 ? "Sí" : "No"}</span></div>
           </div>
         </CardContent>
